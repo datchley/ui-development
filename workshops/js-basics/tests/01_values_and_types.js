@@ -4,7 +4,7 @@ jest.autoMockOff();
 
 describe('Values and Types', () => {
     
-    xit('Javascript has six basic types', () => {
+    xit('Javascript\'s six basic types', () => {
         // Using literals for each type below
         // declare variables to pass the checks
         /*
@@ -24,13 +24,19 @@ describe('Values and Types', () => {
         expect(typeof types.number).toBe('number');
         expect(typeof types.nullobj).toBe('object');
         expect(typeof types.bool).toBe('boolean');
+
+        // What should we expect his to be?
+        expect(typeof null).toBe();
     });
 
     xit('Accessing Object and Array values', () => {
 
         let obj = {
                 a: 42,
-                b: "fourty two"
+                b: "fourty two",
+                c: {
+                    d: "toasters"
+                }
             },
             arr = [1,2,3];
 
@@ -41,12 +47,14 @@ describe('Values and Types', () => {
         let a, 
             b,
             c,
+            d,
             len ;
         */
 
 
         expect(a).toEqual(42);
         expect(obj[b]).toEqual("fourty two");
+        expect(obj[b][d]).toEqual("toasters");
         expect(arr[c]).toEqual(2);
         expect(len).toEqual(3);
 
