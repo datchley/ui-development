@@ -30,42 +30,97 @@ describe('Values and Types', () => {
             },
             arr = [1,2,3],
 
-            // Assign values to the following variables to
-            // ensure the below tests pass as expected.
+        // Object and Array literal notation: 
+        // Assign values to the following variables to
+        // ensure the below tests pass as expected.
             a = obj.a, 
             b = "b",
             c = 1,
             len = arr.length;
 
+
         expect(a).toEqual(42);
         expect(obj[b]).toEqual("fourty two");
         expect(arr[c]).toEqual(2);
         expect(len).toEqual(3);
+
     });
 
-    it('Using Functions', () => {
-        // Declare a function called sum that adds two numbers
+    it('Working with Arrays as Types', () => {
+        // Arrays can be created using array literals or
+        // using the Array constructor invoked with the 'new' operator.
+        // The Array constructor can take a single param, which signifies
+        // the length of the array to create; or, multiple parameters which
+        // will create an array with those values as entries
+        // Array's also have a length property to get the number of elements
+
+        // Complete the code to pass the following tests
+        let arrA = new Array(3),        // array with 3 undefined values, 
+            arrB = new Array(1,2,3,4)   // array of numbers 1 - 4
+
+        expect(arrA.length).toBe(3);
+        expect(arrA.toString()).toBe(",,");
+        expect(arrB.reduce((sum, n) => sum+=n)).toBe(10);
+        expect(arrB.length).toBe(4);
+    });
+
+    it('Working with Objects as Types', () => {
+        // Objects can be created using object literals, the Object constructor
+        // with the 'new' operator or Object.create().
+        
+        // Complete the following code to pass the tests
+        let objA = new Object({ name: "Han Solo" }),            // use 'new Object' to create
+            objB = { name: "Darth Vader" },                     // use literal notation
+            objC = Object.create({ name: "Luke Skywalker" });   // using Object.create
+
+        expect(objA.name).toBe("Han Solo");
+        expect(objB.name).toBe("Darth Vader");
+        expect(objC.name).toBe("Luke Skywalker");
+    });
+
+
+    it('First-Class & Higher Order Functions', () => {
+        // Functions can be created in two basic ways:
+        //  1. declaration:  function foo(){ ... }
+        //  2. expression: var f = function(){ ... }
+        //
+        // - Functions are first-class objects in Javascript, meaning
+        //   they can be used anywhere a value would be used.
+        // - Because of this, functions in Javascript can also be higher-order
+        //   functions, meaning they can take a function as a parameter and 
+        //   return a function as a value.
+
+        // Declare a function called 'sum' that returns the sum of two numbers
         function sum(a,b) { return a+b; }
 
-        // Create a function expression called that performs the 
-        // same function as sum()
+        // Assign a function expression to 'add' that returns the sum of two numbers
         let add = function(a,b){ return a+b; };
 
-        // Functions can be used as first-class values, and
-        // so can be passed to and returned from functions.
-        function doSum(fn, a, b) { return fn(a,b); };
-        function passback(fn){ return fn; }
+        // Ensure that 'callWith' can be called with a function
+        // as the first argument and returns the result of calling
+        // that function with the two params 
+        function callWith(fn, a, b) { 
+            return fn(a,b); 
+        };
+        let added = callWith(sum, 5, 8);
+
+        // Ensure that 'getSqr' returns a function that will return
+        // the square of it's argument.
+        function getSqr() { 
+            return function(n) { return n*n; };
+        }
 
         expect(sum(4,4)).toEqual(8);
         expect(add(3,3)).toEqual(6);
-        expect(doSum(sum,1,2)).toEqual(3);
-        expect(passback(add)(1,2)).toEqual(3);
+        expect(added).toEqual(13);
+        expect(getSqr()(4)).toEqual(16);
     });
 
     it('Truthy vs Falsy Values', () => {
         // Create an array of ALL the falsy values in
         // javascript by removing the non-falsy values from
         // the following array.
+
         // var falsy = ["", {}, 0, -0, function(){}, -4, NaN, " ", null, true, undefined, [], false];
         var falsy = ["", 0, -0, NaN, null, undefined, false];
 
