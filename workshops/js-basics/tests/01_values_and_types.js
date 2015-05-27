@@ -1,18 +1,22 @@
+/* jshint esnext:true */
+/* global jest, expect, describe, it, xit */
 jest.autoMockOff();
 
 describe('Values and Types', () => {
     
-    it('Javascript has six basic types', () => {
+    xit('Javascript has six basic types', () => {
         // Using literals for each type below
         // declare variables to pass the checks
+        /*
         let types = {
-            object: { a: 1 },       // non-null object,
-            undef: undefined,       // undefined
-            string: 'a string',     // string literal
-            number: 42,             // number literal
-            nullobj: null,          // null object
-            bool: true              // boolean literal
+            object: ,       // non-null object,
+            undef: ,        // undefined
+            string: ,       // string literal
+            number: ,       // number literal
+            nullobj: ,      // null object
+            bool:           // boolean literal
         };
+        */
 
         expect(typeof types.object).toBe('object');
         expect(typeof types.undef).toBe('undefined');
@@ -22,21 +26,23 @@ describe('Values and Types', () => {
         expect(typeof types.bool).toBe('boolean');
     });
 
-    it('Accessing Object and Array values', () => {
+    xit('Accessing Object and Array values', () => {
 
         let obj = {
                 a: 42,
                 b: "fourty two"
             },
-            arr = [1,2,3],
+            arr = [1,2,3];
 
         // Object and Array literal notation: 
         // Assign values to the following variables to
         // ensure the below tests pass as expected.
-            a = obj.a, 
-            b = "b",
-            c = 1,
-            len = arr.length;
+        /*
+        let a, 
+            b,
+            c,
+            len ;
+        */
 
 
         expect(a).toEqual(42);
@@ -46,7 +52,7 @@ describe('Values and Types', () => {
 
     });
 
-    it('Working with Arrays as Types', () => {
+    xit('Working with Arrays as Types', () => {
         // Arrays can be created using array literals or
         // using the Array constructor invoked with the 'new' operator.
         // The Array constructor can take a single param, which signifies
@@ -55,8 +61,10 @@ describe('Values and Types', () => {
         // Array's also have a length property to get the number of elements
 
         // Complete the code to pass the following tests
-        let arrA = new Array(3),        // array with 3 undefined values, 
-            arrB = new Array(1,2,3,4)   // array of numbers 1 - 4
+        /*
+        let arrA = ,        // array with 3 undefined values, 
+            arrB = ;        // array of numbers 1 - 4
+        */
 
         expect(arrA.length).toBe(3);
         expect(arrA.toString()).toBe(",,");
@@ -64,14 +72,16 @@ describe('Values and Types', () => {
         expect(arrB.length).toBe(4);
     });
 
-    it('Working with Objects as Types', () => {
+    xit('Working with Objects as Types', () => {
         // Objects can be created using object literals, the Object constructor
         // with the 'new' operator or Object.create().
         
         // Complete the following code to pass the tests
-        let objA = new Object({ name: "Han Solo" }),            // use 'new Object' to create
-            objB = { name: "Darth Vader" },                     // use literal notation
-            objC = Object.create({ name: "Luke Skywalker" });   // using Object.create
+        /*
+        let objA = ,   // use 'new Object' to create
+            objB = ,   // use literal notation
+            objC = ;   // using Object.create
+        */
 
         expect(objA.name).toBe("Han Solo");
         expect(objB.name).toBe("Darth Vader");
@@ -79,7 +89,7 @@ describe('Values and Types', () => {
     });
 
 
-    it('First-Class & Higher Order Functions', () => {
+    xit('First-Class & Higher Order Functions', () => {
         // Functions can be created in two basic ways:
         //  1. declaration:  function foo(){ ... }
         //  2. expression: var f = function(){ ... }
@@ -91,23 +101,23 @@ describe('Values and Types', () => {
         //   return a function as a value.
 
         // Declare a function called 'sum' that returns the sum of two numbers
-        function sum(a,b) { return a+b; }
+        /* function ... */
 
         // Assign a function expression to 'add' that returns the sum of two numbers
-        let add = function(a,b){ return a+b; };
+        /* let add =  */
 
         // Ensure that 'callWith' can be called with a function
         // as the first argument and returns the result of calling
-        // that function with the two params 
+        // that function with the two additional arguments 
         function callWith(fn, a, b) { 
-            return fn(a,b); 
+            /* return  ... */
         };
         let added = callWith(sum, 5, 8);
 
         // Ensure that 'getSqr' returns a function that will return
         // the square of it's argument.
         function getSqr() { 
-            return function(n) { return n*n; };
+            /* return  ... */
         }
 
         expect(sum(4,4)).toEqual(8);
@@ -116,19 +126,18 @@ describe('Values and Types', () => {
         expect(getSqr()(4)).toEqual(16);
     });
 
-    it('Truthy vs Falsy Values', () => {
+    xit('Truthy vs Falsy Values', () => {
         // Create an array of ALL the falsy values in
         // javascript by removing the non-falsy values from
         // the following array.
 
-        // var falsy = ["", {}, 0, -0, function(){}, -4, NaN, " ", null, true, undefined, [], false];
-        var falsy = ["", 0, -0, NaN, null, undefined, false];
+        var falsy = ["", {}, 0, -0, function(){}, -4, NaN, " ", null, true, undefined, [], false];
 
         expect(falsy.filter((v) => !!v).length).toBe(0);
         expect(falsy.length).toBe(7);
     });
 
-    it('Comparison and Coercion', () => {
+    xit('Comparison and Coercion', () => {
         // Javascript has two equality operators '==' and '==='
         //  * '==' checks for value equality allowing for coercion of types
         //  * '===' checks for value equality and disallows coercion
@@ -145,19 +154,19 @@ describe('Values and Types', () => {
         //
         // Fill in the expected value in the following tests
 
-        expect("42" === 42).toBe(false);
-        expect("42" == 42).toBe(true);
-        expect([1,2,3] == [1,2,3]).toBe(false);
-        expect("1,2,3" == [1,2,3]).toBe(true);
-        expect(null == undefined).toBe(true);
-        expect(null === undefined).toBe(false);
-        expect(41 < "42").toBe(true);
-        expect("42" < "43").toBe(true);
+        expect("42" === 42).toBe();
+        expect("42" == 42).toBe();
+        expect([1,2,3] == [1,2,3]).toBe();
+        expect("1,2,3" == [1,2,3]).toBe();
+        expect(null == undefined).toBe();
+        expect(null === undefined).toBe();
+        expect(41 < "42").toBe();
+        expect("42" < "43").toBe();
 
         // Special cases with NaN
-        expect(42 < "foo").toBe(false);
-        expect(42 > "foo").toBe(false);
-        expect(42 == "foo").toBe(false);
+        expect(42 < "foo").toBe();
+        expect(42 > "foo").toBe();
+        expect(42 == "foo").toBe();
 
     });
 
