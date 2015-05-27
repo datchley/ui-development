@@ -1,3 +1,5 @@
+/* jshint esnext:true */
+/* global jest, expect, describe, it, xit */
 jest.autoMockOff();
 
 describe('Values and Types', () => {
