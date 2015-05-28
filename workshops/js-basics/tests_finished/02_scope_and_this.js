@@ -5,20 +5,20 @@ jest.autoMockOff();
 
 describe('Values and Types', () => {
     
-    xit('Scope is lexical', () => {
+    it('Scope is lexical', () => {
         var a = 4;
 
         // Declare local variables in the closure for
         // 'a' and 'b'
         !function(){
-            
+            var a = 6, b = 3;
         }();
 
         expect(()=> console.log(b)).toThrow(new ReferenceError('b is not defined'));
         expect(a).toBe(4);
     });
 
-    xit('A Scope has access to its parent scope', () => {
+    it('A Scope has access to its parent scope', () => {
         var a = 4,
             sum;
 
@@ -26,13 +26,13 @@ describe('Values and Types', () => {
         // is equal to the square of 'a' outside
         // the closure
         !function() {
-            
+            sum = a * a;
         }();
 
         expect(sum).toEqual(16);
     });
 
-    xit('Javascript and block scope (ES5 vs ES6)', () => {
+    it('Javascript and block scope (ES5 vs ES6)', () => {
         // There are exceptions, like the 'catch' of a 'try..catch'
         // statement, and when using 'let' instead of 'var' inside
         // a block.
@@ -41,30 +41,31 @@ describe('Values and Types', () => {
         // Inside the 'if' declare a variable 'b' that is not block scoped
         // and a variable 'c' that is block scope
         if (true) {
-            
-           
+            var b = 2;
+            let c = 4;
         }
 
         expect(b).toBeDefined();
         expect(() => console.log(c)).toThrow(new ReferenceError('c is not defined'));
     });
 
-    xit('Variable scope can be namespaced to avoid conflicts', () => {
+    it('Variable scope can be namespaced to avoid conflicts', () => {
         var level = 8;
         // Declare a new namespace called 'my' that has it's own
         // 'level' variable set to 10
-        
+        var my = { level: 10 };
 
         expect(level).toBe(8);
         expect(my.level).toBe(10);
     });
 
-    xit('Closures can be used to retain access to a local scope', () => {
+    it('Closures can be used to retain access to a local scope', () => {
         // Using the Immediately Invoked Function Expression (IIFE), return
         // a function that when called increments a count by 1 and starts
         // at 1.
         var inc = ((start) => {
-
+            var count = start;
+            return () => count++; 
         })(1);
 
         expect(() => console.log(count)).toThrow(new ReferenceError('count is not defined'));
@@ -72,7 +73,7 @@ describe('Values and Types', () => {
         expect(inc()).toBe(2);
     });
 
-    xit('Javascript \'var\' declarations and functions hoist', () => {
+    it('Javascript \'var\' declarations and functions hoist', () => {
         // 'var' and function declarations are hoisted to the top of the current
         // lexical scope. However, the values 'var' of those declarations are not
         // assigned until the point in the code they are found. Including
@@ -85,8 +86,11 @@ describe('Values and Types', () => {
         }
 
         // Declar a variable 'b' and a function 'foo' that passes the tests
+        var b = 16;
+        function foo() { return 4; }
 
         // Declare a variable c that holds a function expression that satisfies the tests
+        var c = function(){ return true; };
 
         if (true) {
             expect(b).toBeDefined();
@@ -96,7 +100,7 @@ describe('Values and Types', () => {
         }
     });
 
-    xit('\'let\' declarations are not hoisted', () => {
+    it('\'let\' declarations are not hoisted', () => {
         // 'let' declarations and initially assigned values are not
         // hoisted and throw a reference error
 
@@ -107,6 +111,8 @@ describe('Values and Types', () => {
         }
 
         // Declare variables 'a' and 'b' that satisfy the tests
+        let a = 4;
+        var b = 4;
 
         if (true) {
             expect(b).toBeDefined();
@@ -114,11 +120,11 @@ describe('Values and Types', () => {
         }
     });
 
-    xit('\'this\' in constructors refer to the returned object', () => {
+    it('\'this\' in constructors refer to the returned object', () => {
         
         // Ensure that Person object's have a name
         function Person(name) {
-
+            this.name = name;
         }
         var me = new Person("Captain Mal");
 
@@ -151,11 +157,13 @@ describe('Values and Types', () => {
         // that the 'whoami' function returns the person's name and satisfies
         // the tests.
         function Person(name) {
-
+            this.name = name;
         }
-        Person.prototype.whoami = function() { /* code here */ };
+        Person.prototype.whoami = function() { return this.name; };
         var me = new Person("River");
 
+        // In a browser, 'this' would be defined inside function and it
+        // would be global scope
         var whoami = function() { 
             return this.name;
         };
@@ -183,12 +191,13 @@ describe('Values and Types', () => {
         }
 
         // Call show with arguments that satisfy the tests
-        show();
+        show("var b = 3", 1);
     });
 
-    xit('\'eval\' can modify scope and is bad (2)', () => {
+    it('\'eval\' can modify scope and is bad (2)', () => {
         // eval has access and can modify the local scope that it is
         // enclosed in
+
         var b = 4;
 
         expect(b).toBe(4);
@@ -198,8 +207,8 @@ describe('Values and Types', () => {
             expect(b).toBe(3);
         }
 
-        // Call 'show()' with arguments that satisfy the tests
-        show();
+        // Call 'show' with arguments that satisfy the tests
+        show("b = 3", 1);
         expect(b).toBe(3);
     });
 
@@ -215,6 +224,6 @@ describe('Values and Types', () => {
         }
 
         // Call 'show' with arguments that satisfy the tests
-        show();
+        show("var a = 3");
     });
 });
