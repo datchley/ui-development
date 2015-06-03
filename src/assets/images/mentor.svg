@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="103px" height="103px" viewBox="0 0 103 103" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>path-1 + 1:1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="path-1-+-1:1" sketch:type="MSLayerGroup" transform="translate(1.500000, 1.500000)">
+            <circle id="path-1" stroke="#3476FF" stroke-width="3" sketch:type="MSShapeGroup" cx="50" cy="50" r="50"></circle>
+            <path d="M36.017,63.7418125 L36.017,37 L26,37 L26,41.5165938 L31.3215312,41.5165938 L31.3215312,63.7418125 L36.017,63.7418125 Z M52.3393438,52.6068438 L52.3393438,46.9722813 L46.8389375,46.9722813 L46.8389375,52.6068438 L52.3393438,52.6068438 Z M52.3393438,63.7418125 L52.3393438,58.10725 L46.8389375,58.10725 L46.8389375,63.7418125 L52.3393438,63.7418125 Z M71.1659375,63.7418125 L71.1659375,37 L61.1489375,37 L61.1489375,41.5165938 L66.4704688,41.5165938 L66.4704688,63.7418125 L71.1659375,63.7418125 Z" id="1:1" fill="#3476FF" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

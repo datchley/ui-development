@@ -2,12 +2,29 @@
 <html class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>Bullhorn Design - UX Style Guide</title>
+    <title>Bullhorn UI Community</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="resources/images/bh_paas_fav.png">
+
+    <link rel="shortcut icon" href="dist/assets/images/bh_paas_fav.png">
     <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic|Roboto:400,100,100italic,300,300italic,400italic,500italic,700,500,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="resources/css/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css" rel="stylesheet">
+    <link href="/dist/app.min.css" rel="stylesheet">
+
+    <script type="template/x-handlebars" id="member-profile">
+        {{#each members}}
+            <a href="{{link}}" class="member">
+                <img src="{{avatar}}">
+                <h3 class="name">
+                    <span class="first">{{firstname}}</span>
+                    <span class="last">{{lastname}}</span>
+                </h3>
+                <span class="role">{{role}}</span>
+            </a>
+        {{/each}}
+    </script>
 </head>
 <body class="style-guide">
     <nav role="navigation">
@@ -23,12 +40,118 @@
     <header class="header-sec design-header">
       <div class="container">
         <h1>UI Developer Community</h1>
-        <h3>We're creating an Incredible Customer Experience in Enterprise Software</h3>
+        <h3>Building innovative web functionality for creating an Incredible Customer Experience</h3>
         <div class='bg-svg'></div>
       </div>
     </header>
 
     <main role="main">
+        <section name="focuses" class="focuses-section">
+            <div class="container">
+                <h4>Getting Started</h4>
+                <div class="row">
+                    <div class="col-md-4 col-xs-4 text-center">
+                        <div class="card-box" style="background-color: #EB6845">
+                            <h5><a href="dist/pages/guides.html">Guides <i class="fa fa-chevron-right"></i></a></h5>
+                            <i class="fa fa-leanpub fa-5x pull-right"></i>
+                            <p>
+                                Reference and how-to guides for our developers covering: style, peer review, design and testing...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4 text-center">
+                        <div class="card-box" style="background-color: #8CC152">
+                            <h5>Resources <i class="fa fa-chevron-right"></i></h5>
+                            <i class="fa fa-code fa-5x pull-right"></i>
+                            <p>
+                                Links to resources, internal and external, for Javascript, design patterns, tools and more...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4 text-center">
+                        <div class="card-box" style="background-color: #3BAFDA">
+                            <h5>Education <i class="fa fa-chevron-right"></i></h5>
+                            <i class="fa fa-mortar-board fa-5x pull-right"></i>
+                            <p>
+                                We want our developer community to continue growing & learning through workshops, code lunches, mentoring...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section name="roadmap" class="roadmap-section">
+            <div class="container">
+                <h4>Technology Stack</h4>
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                            <p>
+                            Web development at Bullhorn is leading the way in pushing for a more efficient, scalable and modular architecture.  We want to stay ahead of the
+                            current best practices and technologies in web and mobile platform development.
+                            </p>
+                    </div>
+                    <div class="col-md-6 col-xs-6 text-center dev-icons">
+                            <span class="devicons devicons-javascript_badge "></span>
+                            <span class="devicons devicons-html5 "></span>
+                            <span class="devicons devicons-css3 "></span>
+                            <span class="devicons devicons-angular "></span>
+                            <span class="devicons devicons-jquery "></span>
+                            <span class="devicons devicons-git "></span>
+                            <span class="devicons devicons-nodejs "></span>
+                            <span class="devicons devicons-grunt "></span>
+                            <span class="devicons devicons-bower "></span>
+                            <span class="devicons devicons-npm "></span>
+                            <span class="devicons devicons-less"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section name="community" class="community-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                        <h4>Mentoring</h4>
+                        <div class="text-center" style="margin-top: 40px;">
+                            <img src="dist/assets/images/slack-api-icon.png" style="width: 100px">
+                            <span style="color: #3476FF; font-size: 40px; vertical-align: middle" class="fa fa-plus"></span>
+                            <img src="dist/assets/images/mentor.svg">
+                            <span style="color: #3476FF; font-size: 40px; vertical-align: middle" class="fa fa-arrow-right"></span>
+                            <img src="dist/assets/images/career-services.svg">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <p>
+                        As part of our committment to learning and growth for our developers, we pair up new and junior developers with
+                        our more senior, experienced developers to help in mentoring through regular one-on-one's and having someone 
+                        to consult and provide feedback through a developer's career path in the right focus area.
+                        </p>
+                        <button onclick="javascript: window.location.href='https://bullhorn-all.slack.com'" type="button" class="btn btn-default btn-lg btn-block card-btn"><i class="fa fa-chevron-right"></i> <i class="fa fa-slack"></i> UI Community Chat</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section name="members" class="members-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                    <h4>Community Members</h4>
+                    <p>Our UI developer community is a creative and diverse group of dedicated developers and team members that work across
+                      a number of Bullhorn products and contribute every day to our success in building an Incredible Customer Experience.
+                    </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 text-center">
+                        <h3>St. Louis</h3>
+                        <div class="member-list member-list-stlouis"><!-- Member List Here --></div>
+                    </div>
+                    <div class="col-md-12 col-xs-12 text-center">
+                        <h3>Boston</h3>
+                        <div class="member-list member-list-boston"><!-- Member List Here --></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
 <footer>
@@ -77,8 +200,9 @@
     </section>
 </footer>
 
-<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="/dist/app.min.js"></script>
 
 </body>
 </html>

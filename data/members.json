@@ -1,0 +1,43 @@
+[
+    
+    { 
+        "firstname": "Jay",
+        "lastname": "Pennington",
+        "link": "#",
+        "role": "Director, Software Development",
+        "location": "St. Louis",
+        "avatar": "/dist/assets/images/generic-gravatar-nerd.png"
+    },
+    { 
+        "firstname": "David",
+        "lastname": "Atchley",
+        "link": "#",
+        "role": "Senior UI Engineer",
+        "location": "St. Louis",
+        "avatar": "/dist/assets/images/generic-gravatar-nerd.png"
+    },
+    { 
+        "firstname": "Brian",
+        "lastname": "Kimball",
+        "link": "#",
+        "role": "Principle UI Engineer",
+        "location": "Boston",
+        "avatar": "/dist/assets/images/generic-gravatar-nerd.png"
+    },
+    { 
+        "firstname": "Amrutha",
+        "lastname": "Rajiv",
+        "link": "#",
+        "role": "Senior UI Engineer",
+        "location": "Boston",
+        "avatar": "/dist/assets/images/generic-gravatar-nerd.png"
+    },
+    { 
+        "firstname": "Nate",
+        "lastname": "Something",
+        "link": "#",
+        "role": "Senior UI Engineer",
+        "location": "St. Louis",
+        "avatar": "/dist/assets/images/generic-gravatar-nerd.png"
+    }
+]
