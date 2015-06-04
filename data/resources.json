@@ -1,0 +1,116 @@
+[
+    {
+        "tag": "Javascript",
+        "title": "Javascript Objects",
+        "link": "http://davidwalsh.name/javascript-objects",
+        "author": "Kyle Simpson",
+        "type": "web"
+    },
+    {
+        "tag": "Javascript",
+        "title": "The Two Pillars of Javascript Part 1: Prototypal OO",
+        "link": "https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3",
+        "author": "Eric Elliott",
+        "type": "web"
+    },
+    {
+        "tag": "Javascript",
+        "title": "The Two Pillars of Javascript Part 2: Functional Programming",
+        "link": "https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4",
+        "author": "Eric Elliott",
+        "type": "web"
+    },
+    {
+        "tag": "Javascript",
+        "title": "Javascript Application Architecture: Road to 2015",
+        "link": "https://medium.com/@addyosmani/javascript-application-architecture-on-the-road-to-2015-d8125811101b",
+        "author": "Addy Osmani",
+        "type": "web"
+    },
+    {
+        "tag": "Javascript",
+        "title": "Introduction to Reactive Programming",
+        "link": "https://gist.github.com/staltz/868e7e9bc2a7b8c1f754",
+        "author": "Andre Staltz",
+        "type": "web"
+    },
+    {
+        "tag": "Javascript",
+        "title": "General Theory of Reactivity",
+        "link": "https://github.com/kriskowal/gtor",
+        "author": "Kris Kowal",
+        "type": "web"
+    },
+    {
+        "tag": "Javascript",
+        "title": "Classical Inheritance is Obsolete",
+        "link": "https://vimeo.com/69255635",
+        "author": "Eric Elliot",
+        "type": "video"
+    },
+    {
+        "tag": "Javascript",
+        "title": "Asynchronous Programming at Netflix",
+        "link": "https://www.youtube.com/watch?v=gawmdhCNy-A",
+        "author": "Jafar Husain",
+        "type": "video"
+    },
+    {
+        "tag": "Javascript",
+        "title": "ES5 Spec, Annotated",
+        "link": "http://es5.github.io/",
+        "author": "ECMA-262/5.1", 
+        "type": "web"
+    },
+    {
+        "tag": "Javascript",
+        "title": "ES6 (ESNext) Draft Spec",
+        "link": "https://people.mozilla.org/~jorendorff/es6-draft.html",
+        "author": "ECMA/TC39/2015/0XX",
+        "type": "web"
+    },
+    {
+        "tag": "Javascript",
+        "title": "Eloquent Javascript",
+        "link": "http://eloquentjavascript.net/",
+        "author": "Marijn Haverbeke",
+        "type": "book"
+    },
+    {
+        "tag": "Javascript",
+        "title": "Javascript: The Good Parts",
+        "link": "http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=sr_1_1?ie=UTF8&qid=1433397799&sr=8-1&keywords=Javascript+the+Good+Parts",
+        "author": "Douglas Crockford",
+        "type": "book"
+    },
+    {
+        "tag": "Javascript",
+        "title": "Programming Javascript Applications",
+        "link": "http://pjabook.com/",
+        "author": "Eric Elliott",
+        "type": "book"
+    },
+    {
+        "tag": "Javascript",
+        "title": "You Don\'t Know JS (series)",
+        "link": "https://github.com/getify/You-Dont-Know-JS",
+        "author": "Kyle Simpson",
+        "type": "book"
+    },
+    {
+        "tag": "Javascript",
+        "title": "Javascript Allongé",
+        "link": "https://leanpub.com/javascriptallongesix",
+        "author": "Reginald Braithwaite",
+        "type": "book"
+    },
+    
+
+    {
+        "tag": "Organization ",
+        "title": "Simplicity Matters",
+        "link": "https://www.youtube.com/watch?v=rI8tNMsozo0",
+        "author": "Rich Hickey",
+        "type": "video"
+    }
+]

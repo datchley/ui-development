@@ -1,8 +1,69 @@
 body {
   padding-top: 45px; }
 
+body.page {
+  padding-top: 75px; }
+
 a.list-group-item:hover {
   color: #39D; }
+
+.list-group.resource-list a.list-group-item {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: none;
+  margin-bottom: 0px;
+  font-size: 0.9em; }
+  .list-group.resource-list a.list-group-item .resource-info {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #999; }
+    .list-group.resource-list a.list-group-item .resource-info .resource-link {
+      color: #7AB0E5; }
+    .list-group.resource-list a.list-group-item .resource-info .label.label-type {
+      background-color: #4A89DC;
+      color: #fff; }
+.list-group.resource-list a.list-group-item:hover {
+  background-color: aliceblue; }
+
+nav.navbar {
+  -webkit-box-shadow: 0px 2px 13px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 13px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 13px -2px rgba(0, 0, 0, 0.75); }
+  nav.navbar .navbar-header .navbar-brand {
+    color: #777;
+    font-size: 20px; }
+    nav.navbar .navbar-header .navbar-brand strong {
+      color: #333; }
+    nav.navbar .navbar-header .navbar-brand img.logo {
+      height: 30px;
+      position: relative;
+      display: inline-block;
+      top: -5px;
+      left: -5px; }
+
+nav.navbar.navbar-secondary {
+  height: 40px;
+  min-height: 40px !important;
+  box-shadow: none;
+  border-bottom: 1px solid #ccc; }
+  nav.navbar.navbar-secondary li > a {
+    height: 40px;
+    padding-top: 10px !important;
+    padding-bottom: 0 !important; }
+  nav.navbar.navbar-secondary li > a:hover,
+  nav.navbar.navbar-secondary li > a.active {
+    color: #777;
+    border-bottom: 4px solid #175B9E; }
+  nav.navbar.navbar-secondary li > a.active {
+    color: #175B9E; }
+
+nav.navbar.navbar-secondary.affix {
+  top: 50px;
+  width: 100%;
+  z-index: 999; }
+
+header.design-header {
+  background: linear-gradient(rgba(34, 72, 103, 0.8), rgba(34, 72, 103, 0.8)), url("/dist/assets/images/flowchart-seamless.png") repeat; }
 
 /* Fix anchors in GFM markdown displays being overlapped with fixed nav header */
 main[role="page"] *[id]:before {
@@ -61,26 +122,6 @@ section.members-section h3 {
   font-weight: 700;
   text-shadow: 0px 1px 1px #fff; }
 
-header.design-header {
-  background: linear-gradient(rgba(34, 72, 103, 0.8), rgba(34, 72, 103, 0.8)), url("/dist/assets/images/flowchart-seamless.png") repeat; }
-
-nav[role="navigation"] {
-  -webkit-box-shadow: 0px 2px 13px -2px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 2px 13px -2px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 2px 13px -2px rgba(0, 0, 0, 0.75); }
-  nav[role="navigation"] .logo {
-    display: inline-block;
-    padding: 20px 10px;
-    margin-top: 4px;
-    width: 200px;
-    height: 100%;
-    background: url("/dist/assets/images/bh_plat_logo.svg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    position: relative;
-    z-index: 6; }
-
 div.card-box {
   position: relative;
   margin: 20px auto auto;
@@ -118,7 +159,11 @@ div.card-box {
   text-decoration: none; }
   .member img {
     border-radius: 100%;
-    width: 40%; }
+    border: 2px solid #369;
+    width: 40%;
+    transition: border 0.1s ease-in-out; }
+  .member img:hover {
+    border: 4px solid #6FA4D8; }
   .member .name {
     margin: 0;
     font-size: 1em;

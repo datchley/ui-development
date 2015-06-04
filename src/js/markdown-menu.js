@@ -1,5 +1,4 @@
 import $ from 'jquery';
-window.$ = $;
 
 function MarkdownMenu(el) {
     var $node = el.jquery ? el : $(el);
